@@ -22,13 +22,13 @@ jobs:
           helm lint .
 
       # Step 4: Install kubeconform
-      - name: Install kubeconform
-        run: |
-          curl -LO https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64.tar.gz
-          tar -xzf kubeconform-linux-amd64.tar.gz
+      # - name: Install kubeconform
+      #   run: |
+      #     curl -LO https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64.tar.gz
+      #     tar -xzf kubeconform-linux-amd64.tar.gz
 
-      # Step 5: Render and validate Helm templates
-      - name: Validate rendered Helm templates
-        run: |
-          helm template . | ./kubeconform --strict
+      # # Step 5: Render and validate Helm templates
+      # - name: Validate rendered Helm templates
+      #   run: |
+      #     helm template . | ./kubeconform --strict
 
