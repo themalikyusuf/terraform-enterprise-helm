@@ -147,10 +147,4 @@ spec:
           {{- with .Values.extraVolumeMounts }}
           {{- toYaml . | nindent 10 }}
           {{- end }}
-        ports:
-        - containerPort: {{ .Values.tfe.privateHttpPort }}
-        - containerPort: {{ .Values.tfe.privateHttpsPort }}
-        {{- if .Values.tfe.metrics.enable }}
-        - containerPort: {{.Values.tfe.metrics.httpPort}}
-        - containerPort: {{.Values.tfe.metrics.httpsPort}}
-        {{- end }}
+
